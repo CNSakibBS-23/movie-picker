@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const ShowMovies = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px
-`
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+`;
