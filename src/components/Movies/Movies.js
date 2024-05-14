@@ -14,8 +14,8 @@ const Movies = () => {
     setShowMovies(showMovies - 9);
   };
   return (
-    <div>
-      <div>
+    <div className="">
+      <div className="border-2 border-rose-500">
         <h2 className="font-serif text-orange-400 text-center text-xl">
           Watch Later
         </h2>
@@ -30,7 +30,7 @@ const Movies = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="border-2 border-rose-500">
         <h2 className="font-serif text-orange-400 text-center text-xl">
           Already Watched
         </h2>
@@ -45,7 +45,7 @@ const Movies = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="border-2 border-rose-500">
         <h2 className="font-serif text-orange-400 text-center text-xl">
           Shows
         </h2>
@@ -54,7 +54,9 @@ const Movies = () => {
             <Movie
               key={movie.id}
               movie={movie}
+              watchLater={watchLater}
               setWatchLater={setWatchLater}
+              alreadyWatched={alreadyWatched}
               setAlreadyWatched={setAlreadyWatched}
             ></Movie>
           ))}
@@ -62,7 +64,7 @@ const Movies = () => {
         <div className="text-center">
           {showMovies < 100 && (
             <button
-              className="btn btn-secondary mr-3"
+              className="btn btn-secondary mr-3 btn-xs"
               onClick={addMovieHandler}
             >
               See More
@@ -70,7 +72,10 @@ const Movies = () => {
           )}
 
           {showMovies > 9 && (
-            <button className="btn btn-secondary" onClick={removeMovieHandler}>
+            <button
+              className="btn btn-secondary btn-xs"
+              onClick={removeMovieHandler}
+            >
               See Less
             </button>
           )}
