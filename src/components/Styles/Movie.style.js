@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieCard = styled.div`
-  background-color: #000000;
+  background-color: purple;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
   border-radius: 8px;
@@ -17,18 +17,14 @@ export const MovieCard = styled.div`
     height: auto;
     object-fit: cover;
   }
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
 `;
 
-export const CardRatings = styled.p`
-margin-top: 5px;
-    color: #ff9800; /* or any other color you prefer
+export const CardRatings = styled.div`
+  margin-top: 5px;
+  color: #ff9800;
 `;
 
-export const CardDescription = styled.p`
+export const CardDescription = styled.div`
   margin-top: 10px;
   font-size: 0.9rem;
   color: white;

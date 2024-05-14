@@ -1,18 +1,13 @@
 import React from "react";
-
-const Movie = ({ movie, setWatchLater, setAlreadyWatched }) => {
-  const handleWatchLater = () => {
-    setWatchLater((prev) => [...prev, movie]);
+const AlreadyWatched = ({ movie, alreadyWatched, setAlreadyWatched }) => {
+  const removeHandler = (id) => {
+    const newList = alreadyWatched.filter((movie) => movie.id !== id);
+    setAlreadyWatched(newList);
   };
-
-  const handleAlreadyWatched = () => {
-    setAlreadyWatched((prev) => [...prev, movie]);
-  };
-
   return (
-    <>
+    <div>
       <div className="card card-side bg-base-100 shadow-xl m-3 p-1 flex justify-center border-2 border-rose-500">
-        <figure className="width: 100%;">
+        <figure>
           <img src={movie.image} alt="Movie" />
         </figure>
         <div className="card-body">
@@ -21,22 +16,16 @@ const Movie = ({ movie, setWatchLater, setAlreadyWatched }) => {
           <p>imDb: {movie.rating}</p>
           <div className="card-actions justify-end">
             <button
-              onClick={handleWatchLater}
               className="btn btn-primary btn-xs"
+              onClick={() => removeHandler(movie.id)}
             >
-              Wishlist
-            </button>
-            <button
-              onClick={handleAlreadyWatched}
-              className="btn btn-primary btn-xs"
-            >
-              Watched
+              Remove
             </button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Movie;
+export default AlreadyWatched;

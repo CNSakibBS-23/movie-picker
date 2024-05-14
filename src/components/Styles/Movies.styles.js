@@ -5,3 +5,12 @@ export const ShowMovies = styled.div`
   grid-template-columns: repeat(3, 1fr);
   padding: 10px;
 `;
+export const SelectedContent = styled.div`
+
+background-color:purple;
+
+h2{
+  text-white;
+}
+
+`;

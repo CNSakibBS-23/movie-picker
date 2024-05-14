@@ -1,11 +1,14 @@
-import React from 'react';
-import { StyledHeader } from '../Styles/Header.styles';
+import React, { useEffect, useState } from "react";
+import data from "../../data/movies.json";
 const Header = () => {
-    return (
-        <StyledHeader>
-            <h1>Pick your favourite movies from here!</h1>
-        </StyledHeader>
-    );
+  const [bannerBg, setBannerBg] = useState([]);
+  useEffect(() => {
+    fetch(data)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }, []);
+
+  return <div className="carousel w-full"></div>;
 };
 
 export default Header;
