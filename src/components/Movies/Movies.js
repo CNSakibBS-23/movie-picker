@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import data from "../../data/movies.json";
 import Movie from "./Movie";
-import WatchLater from "../WatchLater/WatchLater";
-import AlreadyWatched from "../AlreadyWatched/AlreadyWatched";
+import { StateContext } from "../Root/Root";
+
 const Movies = () => {
-  const [watchLater, setWatchLater] = useState([]);
-  const [alreadyWatched, setAlreadyWatched] = useState([]);
-  const [showMovies, setShowMovies] = useState(9);
+  const { showMovies, setShowMovies } = useContext(StateContext);
   const addMovieHandler = () => {
     setShowMovies(showMovies + 9);
   };
@@ -14,51 +12,14 @@ const Movies = () => {
     setShowMovies(showMovies - 9);
   };
   return (
-    <div className="">
-      <div className="border-2 border-rose-500">
-        <h2 className="font-serif text-orange-400 text-center text-xl">
-          Watch Later
-        </h2>
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-1 bg-white">
-          {watchLater.map((movie) => (
-            <WatchLater
-              key={movie.id}
-              movie={movie}
-              watchLater={watchLater}
-              setWatchLater={setWatchLater}
-            ></WatchLater>
-          ))}
-        </div>
-      </div>
-      <div className="border-2 border-rose-500">
-        <h2 className="font-serif text-orange-400 text-center text-xl">
-          Already Watched
-        </h2>
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-1 bg-white">
-          {alreadyWatched.map((movie) => (
-            <AlreadyWatched
-              key={movie.id}
-              movie={movie}
-              alreadyWatched={alreadyWatched}
-              setAlreadyWatched={setAlreadyWatched}
-            ></AlreadyWatched>
-          ))}
-        </div>
-      </div>
-      <div className="border-2 border-rose-500">
-        <h2 className="font-serif text-orange-400 text-center text-xl">
+    <div>
+      <div>
+        <h1 className="font-serif text-orange-400 text-center text-xl">
           Shows
-        </h2>
-        <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-1 bg-white">
+        </h1>
+        <div className="bg-white flex min-h-screen flex-wrap justify-center">
           {data.slice(0, showMovies).map((movie) => (
-            <Movie
-              key={movie.id}
-              movie={movie}
-              watchLater={watchLater}
-              setWatchLater={setWatchLater}
-              alreadyWatched={alreadyWatched}
-              setAlreadyWatched={setAlreadyWatched}
-            ></Movie>
+            <Movie key={movie.id} movie={movie}></Movie>
           ))}
         </div>
         <div className="text-center">
@@ -71,7 +32,7 @@ const Movies = () => {
             </button>
           )}
 
-          {showMovies > 9 && (
+          {showMovies > 20 && (
             <button
               className="btn btn-secondary btn-xs"
               onClick={removeMovieHandler}

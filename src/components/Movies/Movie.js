@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { StateContext } from "../Root/Root";
+import "../Styles/ImageStyle.css";
+const Movie = ({ movie }) => {
+  const { watchLater, setWatchLater, alreadyWatched, setAlreadyWatched } =
+    useContext(StateContext);
 
-const Movie = ({
-  movie,
-  watchLater,
-  setWatchLater,
-  alreadyWatched,
-  setAlreadyWatched,
-}) => {
   const handleWatchLater = (id) => {
     if (watchLater.map((movie) => movie.id).includes(id)) {
       return alert("Already Added!!");
@@ -25,24 +23,28 @@ const Movie = ({
 
   return (
     <>
-      <div className="card card-side bg-base-100 shadow-xl m-3 p-1 flex justify-center border-2 border-rose-500">
-        <figure className="">
+      <div className="card-container transition duration-300 ease-in-out hover:scale-110 card bg-base-100 shadow-xl m-2 p-1 border-2 border-rose-500">
+        <figure className="p-3 ">
           <img src={movie.image} alt="Movie" />
         </figure>
-        <div className="card-body">
-          <h2 className="mb-5">{movie.title}</h2>
-          <p className="">({movie.year})</p>
-          <p>imDb: {movie.rating}</p>
-          <div className="card-actions contents">
+        <div className="custom-card-body">
+          <h2 className="text-center text-orange-600">
+            {movie.title} ({movie.year})
+          </h2>
+          <small className="rating-container text-center">
+            Rating: {movie.rating}
+          </small>
+          <small className="description-container">{movie.description}</small>
+          <div className="button-container">
             <button
               onClick={() => handleWatchLater(movie.id)}
-              className="btn btn-primary btn-xs"
+              className="custom-button"
             >
               Wishlist
             </button>
             <button
               onClick={() => handleAlreadyWatched(movie.id)}
-              className="btn btn-primary btn-xs"
+              className="custom-button"
             >
               Watched
             </button>

@@ -4,13 +4,19 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="./">Home</NavLink>
+        <NavLink className="font-serif" to="./">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/watchLater">Watch Later</NavLink>
+        <NavLink className="font-serif" to="/watchLater">
+          Watch Later
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/alreadyWatched">Already Watched</NavLink>
+        <NavLink className="font-serif" to="/alreadyWatched">
+          Already Watched
+        </NavLink>
       </li>
     </>
   );
@@ -41,13 +47,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Movie-Picker</a>
+        <a className="btn btn-ghost text-xl font-serif">Movie-Picker</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Login</a>
       </div>
     </div>
   );

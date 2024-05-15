@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./components/Root/Root";
-import Home from "./components/Home/Home";
-import WatchLater from "./components/WatchLater/WatchLater";
 import AlreadyWatched from "./components/AlreadyWatched/AlreadyWatched";
+import Root from "./components/Root/Root";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import WatchLater from "./components/WatchLater/WatchLater";
+import Home from "./components/Home/Home";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import Movies from "../Movies/Movies";
 
 export const StateContext = createContext([]);
-const StateContextApi = () => {
+const ContextState = () => {
   const [watchLater, setWatchLater] = useState([]);
   return (
     <div>
@@ -13,4 +13,4 @@ const StateContextApi = () => {
   );
 };
 
-export default StateContextApi;
+export default ContextState;
