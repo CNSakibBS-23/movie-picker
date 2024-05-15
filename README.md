@@ -2,6 +2,7 @@
 
 This Project is about picking movies according to Wishlist or Already Watched.
 
+url: https://movie-picker-cns.netlify.app/
 ## Used Technologies
 
 In this project there is a usage of:

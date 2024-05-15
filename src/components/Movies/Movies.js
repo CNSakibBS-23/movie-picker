@@ -26,7 +26,7 @@ const Movies = () => {
           <div className="text-center">
             {showMovies < 100 && (
               <button
-                className="btn btn-secondary mr-3 btn-xs"
+                className="font-serif btn btn-secondary btn-sm m-3"
                 onClick={addMovieHandler}
               >
                 See More
@@ -35,7 +35,7 @@ const Movies = () => {
 
             {showMovies > 20 && (
               <button
-                className="btn btn-secondary btn-xs"
+                className="font-serif btn btn-secondary btn-sm m-3"
                 onClick={removeMovieHandler}
               >
                 See Less
