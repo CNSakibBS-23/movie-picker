@@ -10,6 +10,7 @@ const Movie = ({ movie }) => {
       return alert("Already Added!!");
     } else {
       setWatchLater((prev) => [...prev, movie]);
+      return alert("Added to Watch Later!!");
     }
   };
 
@@ -18,13 +19,14 @@ const Movie = ({ movie }) => {
       return alert("Already Added");
     } else {
       setAlreadyWatched((prev) => [...prev, movie]);
+      return alert("Added to Already Watched!!");
     }
   };
 
   return (
     <>
       <div className="card-container transition duration-300 ease-in-out hover:scale-110 card bg-base-100 shadow-xl m-2 p-1 border-2 border-rose-500">
-        <figure className="p-3 ">
+        <figure className="p-1">
           <img src={movie.image} alt="Movie" />
         </figure>
         <div className="custom-card-body">
@@ -40,7 +42,7 @@ const Movie = ({ movie }) => {
               onClick={() => handleWatchLater(movie.id)}
               className="custom-button"
             >
-              Wishlist
+              Watch Later
             </button>
             <button
               onClick={() => handleAlreadyWatched(movie.id)}

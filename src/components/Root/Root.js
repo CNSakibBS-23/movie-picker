@@ -6,6 +6,7 @@ const Root = () => {
   const [watchLater, setWatchLater] = useState([]);
   const [alreadyWatched, setAlreadyWatched] = useState([]);
   const [showMovies, setShowMovies] = useState(20);
+
   return (
     <div>
       <Navbar></Navbar>
@@ -19,7 +20,9 @@ const Root = () => {
           setShowMovies: setShowMovies,
         }}
       >
-        <Outlet></Outlet>
+        <div style={{ marginTop: "4.2rem" }}>
+          <Outlet></Outlet>
+        </div>
       </StateContext.Provider>
     </div>
   );

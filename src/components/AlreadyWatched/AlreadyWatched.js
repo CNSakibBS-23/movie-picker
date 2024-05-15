@@ -9,8 +9,8 @@ const AlreadyWatched = () => {
   };
   return (
     <>
-      <h2 className="font-serif text-orange-400 text-center text-xl">
-        AlreadyWatched
+      <h2 className="font-serif text-orange-400 text-center text-4xl">
+        Already Watched
       </h2>
       <div className="bg-white flex min-h-screen flex-wrap justify-center">
         {alreadyWatched.map((movie) => (

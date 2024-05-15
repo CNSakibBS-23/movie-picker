@@ -1,17 +1,22 @@
 # Movie Picker App
 
-This Project is about picking movies according to wishlist or watch later.
+This Project is about picking movies according to Wishlist or Already Watched.
 
 ## Used Technologies
 
 In this project there is a usage of:
--React JS
--React Router
--React Hooks
--Tailwind CSS
+- React JS
+- React Router
+- React Hooks (UseState,UseContext)
+- Tailwind CSS
+- Custom CSS
 
-### `user can`
+## Features 
+- Watch diffrent movie informations (Movie Title,Year,Rating,Description)
+- Select movies according to their wishlist using Watch Later Button
+- Can select movies they have Already Watched using Already Watched button
+- User can Remove items from Watch later and Already Watch components by clicking Remove Button
+- Users gets automatic notification after every event by dafult UI alert function.
+- Responsive UI
 
--Watch diffrent movie informations
--Select movies according to their wishlist
--can select movies they have already watched
+

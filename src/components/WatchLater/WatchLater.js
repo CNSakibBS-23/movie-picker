@@ -10,7 +10,7 @@ const WatchLater = () => {
   };
   return (
     <>
-      <h2 className="font-serif text-orange-400 text-center text-xl">
+      <h2 className="font-serif text-orange-400 text-center text-4xl">
         Watch Later
       </h2>
       <div className="bg-white flex min-h-screen flex-wrap justify-center">

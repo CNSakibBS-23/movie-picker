@@ -1,0 +1,15 @@
+.header-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* font-size: min(16px, 1vw); */
+}
+.header-container h1{
+    position: absolute;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    padding: 1em;
+}
